@@ -27,3 +27,5 @@ Upon completion of this course, students should be able to I. Explain the basic 
 ## Table of Contents
 
 - [Syllabus](./syllabus.md)
+
+- [Chapter 1](./chapter01.md)
