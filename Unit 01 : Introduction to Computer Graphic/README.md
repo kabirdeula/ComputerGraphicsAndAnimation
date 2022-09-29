@@ -76,3 +76,32 @@ More the no. of pixels greater will be memory. So, the price will be increased.
     Otherwise, if pk > 0, select point (xk + 1, yk+1), and set pk+1 = pk + 2Δx - 2Δy.
     
     If x1>x2, and y1>y2 then start from (x2, y2) to (x1, y1) i.e, interchange coordinates.
+
+## Midpoint Circle Algorithm / Bresenham’s Circle Drawing Algorithm:
+
+Here, for a given radius “r’ and screen center position (xc, yc), first algorithm is set up to
+calculate pixel position around a circle path centered at the coordinate origin (0, 0). Then each
+calculated position (x, y) is moved to its proper screen position by adding xc to x and yc to y.
+
+    Step 1: Input radius “r” and circle center (xc, yc)
+    
+    Step 2: Obtain the first point on the circumference by assuming that circle is centered on the origin i.e. (x0, y0) = (0, r)
+
+    Step 3: Calculate the initial decision parameter as p0 = 5/4 – r. (if r is integer then set p0 = 1 – r).
+
+    Step 4: Repeat until x > = y at each xk position, starting at k = 0, performing the following
+        if (pk < 0){
+            Select pixel (xk+1, yk)
+            Set pk+1 = (Pk+2xk+3)
+        } else {
+            select pixel (xk+1, yk-1)
+            set pk+1 = pk + 2xk – 2yk +5
+        }
+
+    Step 5: Move each calculated pixel position (x, y) by center (xc, yc) as:
+        x = x + xc
+        y = y + yc
+    
+    Step 6: Determine symmetry points on the other seven octants:
+    
+    Step 7: End

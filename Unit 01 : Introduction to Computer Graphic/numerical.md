@@ -38,7 +38,7 @@
 
 ---
 
-## 4. Find out the DDA with the given points (1, 5) and (7, 2).
+## 4. Digitize a line end points (1, 5) and (7, 2) using DDA algorithm.
 
     Given,
     x1 = 1                      y1 = 5
@@ -75,7 +75,7 @@
 
 ---
 
-## 5. Find out the DDA with the given points (1, -6) and (4, 4).
+## 5. Digitize a line end points (1, -6) and (4, 4) using DDA algorithm.
 
     Given,
     x1 = 1                      y1 = -6
@@ -146,6 +146,8 @@
   |   3   |   -1  |     14, 17     |
   |   4   |   5   |     15, 18     |
 
+---
+
 ## 7. Digitize a line end points (20, 10) and (30, 18) using BSA algorithm.
 
     Given,
@@ -180,6 +182,8 @@
   |   7   |   -2  |     28, 16     |
   |   8   |   14  |     29, 17     |
   |   9   |   10  |     30, 18     |
+
+---
 
 ## 8. Digitize a line end points (4, 10) and (10, 20) using BSA algorithm.
 
@@ -216,6 +220,8 @@
   |   8   |   -2  |      9, 19     |
   |   9   |   10  |     10, 20     |
 
+---
+
 ## 9. Digitize a line end points (3, 10) and (6, 2) using BSA algorithm.
 
     Given,
@@ -251,6 +257,7 @@
   |   6   |   2   |      6, 9      |
   |   7   |   -8  |      6, 10     |
   
+---
 
 ## 10. Digitize a line end points (1, 9) and (6, 1) using BSA algorithm.
 
@@ -286,4 +293,103 @@
   |   5   |   4   |      5, 7      |
   |   6   |   -2  |      5, 8      |
   |   7   |   8   |      6, 9      |
+
+---
   
+## 11. Digitize the circle with radius 4 unit and center (3, 3) using midpoint circle algorithm.
+
+    Given,
+    center (3, 3)
+    radius = 4
+
+    Assume,
+    center (xc, yx) = (0, 0)
+    x1, y1 = (0, r) = (0, 4)
+
+    P0 = (1 - r)
+       = 1 - 4
+       = -3
+
+    Intermediate pixels calculation and decision parameter are shown in table below:
+  
+  |   k   |   Pk  | xk + 1, yk + 1 |  2xk  |  2yk  |
+  | :---: | :---: | :------------: | :---: | :---: |
+  |   0   |   -3  |      1, 4      |   0   |   8   |
+  |   1   |   0   |      2, 3      |   2   |   8   |
+  |   2   |   -1  |      3, 3      |   4   |   6   |
+  
+    The pixels when centered is at (0, 0) are (0, 4), (1, 4), (2, 3), (3, 3).
+
+    On center (3, 3)
+
+    1st point (0, 4) = (0 + 3, 4 + 3) = (3, 7)
+
+    2nd point (1, 4) = (1 + 3, 4 + 3) = (4, 7)
+
+    3rd point (2, 3) = (2 + 3, 3 + 3) = (5, 6)
+
+    4th point (3, 3) = (3 + 3, 3 + 3) = (6, 6)
+
+    Final points are when centered at (3, 3) are (3, 7), (4, 7), (5, 6), (6, 6).
+
+    The above points are of first octant, now the intermediate coordinates on seven octants are:
+
+    (3, 7)
+    (3, 7), (-3, 7), (3, -7), (-3, -7)
+    (7, 3), (-7, 3), (7, -3), (-7, -3)
+
+    (4, 7)
+    (4, 7), (-4, 7), (4, -7), (-4, -7)
+    (7, 4), (-7, 4), (7, -4), (-7, -4)
+
+    (5, 6)
+    (5, 6), (-5, 6), (5, -6), (-5, -6)
+    (6, 5), (-6, 5), (6, -5), (-6, -5)
+
+    (6, 6)
+    (6, 6), (-6, 6), (6, -6), (-6, -6)
+
+---
+
+## 12. Digitize the circle with radius 3 unit and center (3, 2) using midpoint circle algorithm.
+
+    Given,
+    center (3, 2)
+    radius = 3
+
+    Assume,
+    center (xc, yx) = (0, 0)
+    x1, y1 = (0, r) = (0, 3)
+
+    P0 = (1 - r)
+       = 1 - 3
+       = -2
+
+    Intermediate pixels calculation and decision parameter are shown in table below:
+  
+  |   k   |   Pk  | xk + 1, yk - 1 |  2xk  |  2yk  |
+  | :---: | :---: | :------------: | :---: | :---: |
+  |   0   |   -2  |      1, 3      |   0   |   6   |
+  |   1   |   1   |      2, 2      |   2   |   6   |
+  
+    The pixels when centered is at (0, 0) are (0, 3), (1, 3), (2, 2).
+
+    On center (3, 2)
+
+    1st point (0, 3) = (0 + 3, 3 + 2) = (3, 5)
+
+    2nd point (1, 3) = (1 + 3, 3 + 2) = (4, 5)
+
+    3rd point (2, 2) = (2 + 3, 2 + 2) = (5, 4)
+
+    Final points are when centered at (3, 2) are (3, 5), (4, 5), (5, 4).
+
+    The above points are of first octant, now the intermediate coordinates on seven octants are:
+
+    (3, 5)
+    (3, 5), (-3, 5), (3, -5), (-3, -5)
+    (5, 3), (-5, 3), (5, -3), (-5, -3)
+
+    (4, 5)
+    (4, 5), (-4, 5), (4, -5), (-4, -5)
+    (5, 4), (-5, 4), (5, -4), (-5, -4)

@@ -28,4 +28,4 @@ Upon completion of this course, students should be able to I. Explain the basic 
 
 - [Syllabus](./syllabus.md)
 
-- [Chapter 1](./chapter01.md)
+- [Chapter 1](./Unit%2001%20%3A%20Introduction%20to%20Computer%20Graphic/README.md)
