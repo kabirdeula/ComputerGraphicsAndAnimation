@@ -35,3 +35,44 @@ More the no. of pixels greater will be memory. So, the price will be increased.
                 • Perform round off and plot each calculated (x, y) i.e., Plot (round(x), round(y))
     
     Step 8: End
+
+## Bresenham's Line Drawing Algorithm
+
+### Bresenham's algorithm for m <= 1.
+
+    Step 1: Input the line endpoints and store the left endpoint in (x0, y0).
+    
+    Step 2: Load (x0, y0) into the frame buffer i.e. plot the first point
+    
+    Step 3: Calculate constant Δx, Δy, 2Δy -2Δx and obtain the initial decision parameter as:
+    
+            p0 = 2Δy – Δx
+
+    Step 4: At each xk along the line, starting at k=0 perform the following test:
+            
+            • If pk < 0
+                Plot pixel (xk+1, yk) and
+                Set pk+1 = pk +2Δy
+            
+            Otherwise:
+                Plot pixel (xk+1, yk+1), and
+                Set pk+1 = pk + 2Δy - 2Δx
+    
+    Step 5: Repeat step 4 Δx times
+    
+    Step 6: End
+
+### Bresenham's algorithm for m > 1.
+
+    Calculate m, if |m| >1:
+    Such case occurs when Δx < Δy, so m = (Δy/ Δx) >1.
+
+    In such case role of x and y are interchanged that is we can step along y-direction in unit steps and calculate successive x-values
+
+    Calculate initial decision parameter p0 = 2Δx – Δy.
+
+    If pk < 0, select point (xk, yk+1), and set pk+1 = pk + 2Δx
+    
+    Otherwise, if pk > 0, select point (xk + 1, yk+1), and set pk+1 = pk + 2Δx - 2Δy.
+    
+    If x1>x2, and y1>y2 then start from (x2, y2) to (x1, y1) i.e, interchange coordinates.
