@@ -29,3 +29,5 @@ Upon completion of this course, students should be able to I. Explain the basic 
 - [Syllabus](./syllabus.md)
 
 - [Chapter 1](./Unit%2001%20%3A%20Introduction%20to%20Computer%20Graphic/README.md)
+
+- [Chapter 2](./Unit%2002%20%3A%20Two%20Dimensional%20and%20Three%20Dimensional%20Transformation/README.md)
